@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Clock</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0f7fa;
+        }
+
+        .container {
+            width: 240px;
+            height: 480px;
+            background-color: #00796b;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .timer-display {
+            height: 50%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 4px;
+            width: 100%;
+            background-color: #004d40;
+        }
+
+        #time-left {
+            font-size: 50px;
+            font-weight: bold;
+            color: #004d40;
+        }
+
+        .controls {
+            height: 50%;
+            padding: 20px;
+            color: white;
+        }
+
+        #timer-label {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .time-settings {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .session-time,
+        .break-time {
+            text-align: center;
+        }
+
+        .time-settings p {
+            margin: 0 0 5px;
+            font-size: 14px;
+        }
+
+        .time-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .time-control button {
+            background: none;
+            border: none;
+            color: #004d40;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .time-control span {
+            margin: 0 5px;
+            color: #004d40;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .timer-controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #start-stop {
+            background-color: #004d40;
+            color: white;
+        }
+
+        #reset {
+            background-color: #00796b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="timer-display">
+            <div class="progress-bar"></div>
+            <div id="time-left">25:00</div>
+        </div>
+        <div class="controls">
+            <h2 id="timer-label">Session 1</h2>
+            <div class="time-settings">
+                <div class="session-time">
+                    <p>Session Time</p>
+                    <div class="time-control">
+                        <button id="session-decrement">-</button>
+                        <span id="session-length">25 min</span>
+                        <button id="session-increment">+</button>
+                    </div>
+                </div>
+                <div class="break-time">
+                    <p>Break Time</p>
+                    <div class="time-control">
+                        <button id="break-decrement">-</button>
+                        <span id="break-length">5 min</span>
+                        <button id="break-increment">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="timer-controls">
+                <button id="start-stop">Start</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
